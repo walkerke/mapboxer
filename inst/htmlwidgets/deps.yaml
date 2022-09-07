@@ -8,7 +8,7 @@ mapbox-gl:
   package: "mapboxer"
 mapbox-gl2:
   name: "mapbox-gl"
-  version: "1.11.0"
+  version: "2.10.0"
   src: "htmlwidgets/lib/mapbox-gl2"
   script: "mapbox-gl.js"
   stylesheet: "mapbox-gl.css"
