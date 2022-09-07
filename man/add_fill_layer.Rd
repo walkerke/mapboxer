@@ -7,6 +7,7 @@
 add_fill_layer(
   map,
   source = NULL,
+  source_layer = NULL,
   filter = NULL,
   fill_antialias = TRUE,
   fill_color = NULL,
@@ -25,6 +26,8 @@ add_fill_layer(
 \item{map}{A \link{mapboxer} object.}
 
 \item{source}{A Mapbox source. Uses the source from the \link{mapboxer} object if no source is supplied.}
+
+\item{source_layer}{The layer to use from a vector tile source (not needed if the source is not vector).}
 
 \item{filter}{A filter expression that is applied to the \code{source}.}
 

@@ -1,5 +1,6 @@
 #' Add a fill layer to the map
 #' @param source A Mapbox source. Uses the source from the \link{mapboxer} object if no source is supplied.
+#' @param source_layer The layer to use from a vector tile source (not needed if the source is not vector).
 #' @param filter A filter expression that is applied to the \code{source}.
 #' @param fill_antialias (paint) Whether or not the fill should be antialiased.
 #' @param fill_color (paint) The color of the filled part of this layer.
@@ -26,6 +27,7 @@
 add_fill_layer <- function(
                            map,
                            source = NULL,
+                           source_layer = NULL,
                            filter = NULL,
                            fill_antialias = TRUE,
                            fill_color = NULL,
@@ -51,7 +53,8 @@ add_fill_layer <- function(
     "fill-sort-key" = fill_sort_key,
     "visibility" = ifelse(visibility, "visible", "none")
   )
-  style <- create_layer_style(id, "fill", source, filter, paint, layout)
+  style <- create_layer_style(id, "fill", source,
+                              source_layer, filter, paint, layout)
   map %>%
     add_layer(style, popup)
 }
@@ -62,6 +65,7 @@ add_fill_layer <- function(
 #'
 #' @param map The mapboxer map
 #' @param source A Mapbox source. Uses the source from the \link{mapboxer} object if no source is supplied.
+#' @param source_layer The layer to use from a vector tile source (not needed if the source is not vector).
 #' @param filter A filter expression that is applied to the \code{source}.
 #' @param fill_extrusion_base The base height of the layer; if \code{NULL}, will default to 0.
 #' @param fill_extrusion_color (paint) The color of the filled part of this layer.
@@ -84,6 +88,7 @@ add_fill_layer <- function(
 add_fill_extrusion_layer <- function(
     map,
     source = NULL,
+    source_layer = NULL,
     filter = NULL,
     fill_extrusion_base = NULL,
     fill_extrusion_color = NULL,
@@ -109,7 +114,8 @@ add_fill_extrusion_layer <- function(
   layout <- list(
     "visibility" = ifelse(visibility, "visible", "none")
   )
-  style <- create_layer_style(id, "fill-extrusion", source, filter, paint, layout)
+  style <- create_layer_style(id, "fill-extrusion", source,
+                              source_layer, filter, paint, layout)
   map %>%
     add_layer(style, popup)
 }
