@@ -21,6 +21,8 @@
 #' @param visibility (layout) Whether the layer should be displayed.
 #' @inheritParams add_popups
 #' @param id The unique id of the layer.
+#' @param minzoom The minimum zoom at which the layer appears (optional)
+#' @param maxzoom The maximum zoom at which the layer appears (optional)
 #' @seealso \url{https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill}
 #' @example examples/api-reference/fill-layer.R
 #' @export
@@ -39,7 +41,9 @@ add_fill_layer <- function(
                            fill_translate_anchor = NULL,
                            visibility = TRUE,
                            popup = NULL,
-                           id = "fill-layer") {
+                           id = "fill-layer",
+                           minzoom = NULL,
+                           maxzoom = NULL) {
   paint <- list(
     "fill-antialias" = fill_antialias,
     "fill-color" = fill_color,
@@ -54,7 +58,8 @@ add_fill_layer <- function(
     "visibility" = ifelse(visibility, "visible", "none")
   )
   style <- create_layer_style(id, "fill", source,
-                              source_layer, filter, paint, layout)
+                              source_layer, filter, paint, layout,
+                              minzoom, maxzoom)
   map %>%
     add_layer(style, popup)
 }
@@ -82,6 +87,8 @@ add_fill_layer <- function(
 #' @param visibility (layout) Whether the layer should be displayed.
 #' @inheritParams add_popups
 #' @param id The unique id of the layer.
+#' @param minzoom The minimum zoom at which the layer appears (optional)
+#' @param maxzoom The maximum zoom at which the layer appears (optional)
 #' @seealso \url{https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill}
 #' @example examples/api-reference/fill-layer.R
 #' @export
@@ -100,7 +107,9 @@ add_fill_extrusion_layer <- function(
     fill_extrusion_vertical_gradient = TRUE,
     visibility = TRUE,
     popup = NULL,
-    id = "fill-extrusion-layer") {
+    id = "fill-extrusion-layer",
+    minzoom = NULL,
+    maxzoom = NULL) {
   paint <- list(
     "fill-extrusion-base" = fill_extrusion_base,
     "fill-extrusion-color" = fill_extrusion_color,
@@ -115,7 +124,8 @@ add_fill_extrusion_layer <- function(
     "visibility" = ifelse(visibility, "visible", "none")
   )
   style <- create_layer_style(id, "fill-extrusion", source,
-                              source_layer, filter, paint, layout)
+                              source_layer, filter, paint, layout,
+                              minzoom, maxzoom)
   map %>%
     add_layer(style, popup)
 }

@@ -19,7 +19,9 @@ add_fill_extrusion_layer(
   fill_extrusion_vertical_gradient = TRUE,
   visibility = TRUE,
   popup = NULL,
-  id = "fill-extrusion-layer"
+  id = "fill-extrusion-layer",
+  minzoom = NULL,
+  maxzoom = NULL
 )
 }
 \arguments{
@@ -57,6 +59,10 @@ One of "map", "viewport".}
 in which the tags refer to the properties of the layer's data object.}
 
 \item{id}{The unique id of the layer.}
+
+\item{minzoom}{The minimum zoom at which the layer appears (optional)}
+
+\item{maxzoom}{The maximum zoom at which the layer appears (optional)}
 }
 \description{
 Add a fill-extrusion layer to the map

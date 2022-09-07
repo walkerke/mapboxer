@@ -19,7 +19,9 @@ add_fill_layer(
   fill_translate_anchor = NULL,
   visibility = TRUE,
   popup = NULL,
-  id = "fill-layer"
+  id = "fill-layer",
+  minzoom = NULL,
+  maxzoom = NULL
 )
 }
 \arguments{
@@ -61,6 +63,10 @@ One of "map", "viewport".}
 in which the tags refer to the properties of the layer's data object.}
 
 \item{id}{The unique id of the layer.}
+
+\item{minzoom}{The minimum zoom at which the layer appears (optional)}
+
+\item{maxzoom}{The maximum zoom at which the layer appears (optional)}
 }
 \description{
 Add a fill layer to the map
