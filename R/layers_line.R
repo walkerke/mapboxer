@@ -72,7 +72,8 @@ add_line_layer <- function(map,
     "line-sort-key" = line_sort_key,
     "visibility" = ifelse(visibility, "visible", "none")
   )
-  style <- create_layer_style(id, "line", source, filter, paint, layout)
+  style <- create_layer_style(id = id, type = "line", source = source,
+                              filter = filter, paint = paint, layout = layout)
   map %>%
     add_layer(style, popup)
 }

@@ -1,6 +1,8 @@
 library(shiny)
 library(mapboxer)
 
+mapboxer_use_v2(TRUE)
+
 view <- fluidPage(
   h1("mapboxer"),
   mapboxerOutput("map"),
