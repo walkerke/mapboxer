@@ -4,8 +4,7 @@
 \alias{add_deckgl_layer}
 \title{Add a deck.gl layer to the map (experimental)}
 \usage{
-add_deckgl_layer(map, type, data, ..., id = "deckgl-layer",
-  popup = NULL)
+add_deckgl_layer(map, type, data, ..., id = "deckgl-layer", popup = NULL)
 }
 \arguments{
 \item{map}{A \link{mapboxer} object}

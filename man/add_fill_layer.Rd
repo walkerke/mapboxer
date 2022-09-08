@@ -17,7 +17,7 @@ add_fill_layer(
   fill_sort_key = NULL,
   fill_translate = NULL,
   fill_translate_anchor = NULL,
-  visibility = TRUE,
+  visibility = c("visible", "none"),
   popup = NULL,
   id = "fill-layer",
   minzoom = NULL,

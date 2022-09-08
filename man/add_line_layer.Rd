@@ -24,7 +24,7 @@ add_line_layer(
   line_translate = NULL,
   line_translate_anchor = NULL,
   line_width = NULL,
-  visibility = NULL,
+  visibility = c("visible", "none"),
   popup = NULL,
   id = "line-layer"
 )

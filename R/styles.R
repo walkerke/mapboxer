@@ -107,8 +107,8 @@ set_style <- function(map, style) {
 }
 
 create_layer_style <- function(id, type, source,
-                               source_layer, filter, paint, layout,
-                               minzoom, maxzoom) {
+                               source_layer = NULL, filter, paint, layout,
+                               minzoom = NULL, maxzoom = NULL) {
   list(
     id = id,
     type = type,

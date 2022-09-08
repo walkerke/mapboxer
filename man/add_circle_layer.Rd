@@ -20,11 +20,10 @@ add_circle_layer(
   circle_stroke_width = NULL,
   circle_translate = NULL,
   circle_translate_anchor = NULL,
-  visibility = TRUE,
+  visibility = c("visible", "none"),
   popup = NULL,
   id = "circle-layer"
 )
->>>>>>> option-v2
 }
 \arguments{
 \item{map}{A \link{mapboxer} object.}

@@ -4,8 +4,13 @@
 \alias{add_legend_control}
 \title{Add a legend control to the map}
 \usage{
-add_legend_control(map, colors, labels, title = NULL,
-  pos = c("bottom-right", "bottom-left", "top-left", "top-right"))
+add_legend_control(
+  map,
+  colors,
+  labels,
+  title = NULL,
+  pos = c("bottom-right", "bottom-left", "top-left", "top-right")
+)
 }
 \arguments{
 \item{map}{A \link{mapboxer} object.}
