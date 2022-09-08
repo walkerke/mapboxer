@@ -4,17 +4,32 @@
 \alias{add_fill_layer}
 \title{Add a fill layer to the map}
 \usage{
-add_fill_layer(map, source = NULL, filter = NULL,
-  fill_antialias = TRUE, fill_color = NULL, fill_opacity = NULL,
-  fill_outline_color = NULL, fill_pattern = NULL,
-  fill_sort_key = NULL, fill_translate = NULL,
-  fill_translate_anchor = NULL, visibility = c("visible", "none"),
-  popup = NULL, id = "fill-layer")
+add_fill_layer(
+  map,
+  source = NULL,
+  source_layer = NULL,
+  filter = NULL,
+  fill_antialias = TRUE,
+  fill_color = NULL,
+  fill_opacity = NULL,
+  fill_outline_color = NULL,
+  fill_pattern = NULL,
+  fill_sort_key = NULL,
+  fill_translate = NULL,
+  fill_translate_anchor = NULL,
+  visibility = TRUE,
+  popup = NULL,
+  id = "fill-layer",
+  minzoom = NULL,
+  maxzoom = NULL
+)
 }
 \arguments{
 \item{map}{A \link{mapboxer} object.}
 
 \item{source}{A Mapbox source. Uses the source from the \link{mapboxer} object if no source is supplied.}
+
+\item{source_layer}{The layer to use from a vector tile source (not needed if the source is not vector).}
 
 \item{filter}{A filter expression that is applied to the \code{source}.}
 
@@ -47,6 +62,10 @@ One of "map", "viewport".}
 \item{popup}{a \link{mapbox_popup} object or a template string.}
 
 \item{id}{The unique id of the layer.}
+
+\item{minzoom}{The minimum zoom at which the layer appears (optional)}
+
+\item{maxzoom}{The maximum zoom at which the layer appears (optional)}
 }
 \description{
 Add a fill layer to the map
